@@ -1,0 +1,3 @@
+streamlit
+scamp
+mingus
