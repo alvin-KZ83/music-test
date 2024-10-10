@@ -43,21 +43,19 @@ def get_chord_intervals(chord_type):
         "minor_ninth":                  [0, 3, 7, 10, 14],
         "minor_add9":                   [0, 3, 7, 14],
 
-        "dominant_seventh_flat_five":   [0, 4, 6, 10],  # Root, Major third, Diminished fifth, Minor seventh
-        "dominant_seventh_sharp_nine":  [0, 4, 7, 10, 15],  # Root, Major third, Perfect fifth, Minor seventh, Augmented ninth
-        "major":                        [0, 4, 7],  # Root, Major third, Perfect fifth
-        "major_sixth":                  [0, 4, 7, 9],  # Root, Major third, Perfect fifth, Major sixth
-        "dominant_seventh":             [0, 4, 7, 10],  # Root, Major third, Perfect fifth, Minor seventh
-        "dominant_ninth":               [0, 4, 7, 10, 14],  # Root, Major third, Perfect fifth, Minor seventh, Major ninth
-        "major_seventh":                [0, 4, 7, 11],  # Root, Major third, Perfect fifth, Major seventh
-        "major_ninth":                  [0, 4, 7, 11, 14],  # Root, Major third, Perfect fifth, Major seventh, Major ninth
-        "add9":                         [0, 4, 7, 14],  # Root, Major third, Perfect fifth, Major ninth
-        "augmented":                    [0, 4, 8],  # Root, Major third, Augmented fifth
+        "dominant_seventh_flat_five":   [0, 4, 6, 10],
+        "dominant_seventh_sharp_nine":  [0, 4, 7, 10, 15],
+        "major":                        [0, 4, 7],
+        "major_sixth":                  [0, 4, 7, 9],
+        "dominant_seventh":             [0, 4, 7, 10],
+        "dominant_ninth":               [0, 4, 7, 10, 14],
+        "major_seventh":                [0, 4, 7, 11],
+        "major_ninth":                  [0, 4, 7, 11, 14],
+        "add9":                         [0, 4, 7, 14],
+        "augmented":                    [0, 4, 8],
 
-        "sus4":                         [0, 5, 7],  # Root, Perfect fourth, Perfect fifth
-        "sus4_seventh":                 [0, 5, 7, 10],  # Root, Perfect fourth, Perfect fifth, Minor seventh
-
-        # "twinkle":                      [0, 0, 7, 7, 9, 9, 7], # twinkle
+        "sus4":                         [0, 5, 7],
+        "sus4_seventh":                 [0, 5, 7, 10],
     }
     return intervals.get(chord_type, [0])  # Default to root if chord type is not found
 
