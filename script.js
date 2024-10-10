@@ -114,7 +114,9 @@ function updateButtonText() {
 
 // Select Chord 1 as preferred
 document.getElementById('selectChord1').addEventListener('click', function() {
-    sample.push(currentPair[0]);
+    if (currentPair[0]) {
+        sample.push(currentPair[0]);
+    }
     nextRound();
 });
 
@@ -139,7 +141,7 @@ function nextRound() {
         if (sample.length > 1) {
             resetForNextRound();
         } else {
-            document.getElementById('result').innerText = `Congrats! Your favorite chord type is: ${sample[0]}.`;
+            showCongratsPage(sample[0]);
         }
     }
 }
@@ -153,6 +155,29 @@ function resetForNextRound() {
         updateButtonText();
         document.getElementById('result').innerText = "Next round starting...";
     } else if (sample.length === 1) {
-        document.getElementById('result').innerText = `Congrats! Your favorite chord type is: ${sample[0]}.`;
+        // Redirect to congrats.html and pass the favorite chord as a URL parameter
+        showCongratsPage(sample[0]); // Show the congrats page dynamically
     }
+}
+
+// Function to show congrats message
+function showCongratsPage(favoriteChord) {
+    // Hide the current content
+    document.body.innerHTML = '';  // Clear the page
+    
+    // Create a new "Congrats" message
+    const congratsDiv = document.createElement('div');
+    congratsDiv.style.textAlign = 'center';
+    congratsDiv.style.marginTop = '50px';
+    
+    const congratsHeading = document.createElement('h1');
+    congratsHeading.innerText = 'Congratulations!';
+    
+    const congratsMessage = document.createElement('p');
+    congratsMessage.innerText = `Your favorite chord type is: ${favoriteChord}.`;
+    
+    congratsDiv.appendChild(congratsHeading);
+    congratsDiv.appendChild(congratsMessage);
+    
+    document.body.appendChild(congratsDiv);
 }
